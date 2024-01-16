@@ -28,11 +28,11 @@ export default function Seefir() {
         </nav>
 
         <main className="mt-10 py-3">
-          <h1 className="text-4xl text-center font-semibold">See Your FIR</h1>
+          <h1 className="text-4xl text-center font-semibold">Fir Details</h1>
         </main>
 
-        <main className="mx-10 mt-10 flex flex-wrap justify-center gap-4">
-          <div className="p-6 bg-white text-gray-700 border rounded w-96 mb-4">
+        <main className="mx-10 mt-10 flex flex-wrap justify-center">
+          <div className="p-6 bg-white text-gray-700 border rounded flex flex-wrap flex-col w-96 lg:w-2/4">
             <div className="mb-4 border-b pb-4">
               <label className="block text-sm font-semibold text-gray-800">
                 FIR Number:
@@ -56,7 +56,7 @@ export default function Seefir() {
               <label className="block text-sm font-semibold text-gray-800">
                 Investingation Officer:
               </label>
-              <p className="text-gray-500 mb-2">123-456-7890</p>
+              <p className="text-gray-500 mb-2">Chitranshu Raj</p>
             </div>
 
             <div className="mb-4 border-b pb-4">
@@ -66,7 +66,6 @@ export default function Seefir() {
               <p className="text-gray-500 mb-2">In progress</p>
             </div>
 
-            
             <div className="mb-4 border-b pb-4">
               <label className="block text-sm font-semibold text-gray-800">
                 Status:
@@ -87,8 +86,24 @@ export default function Seefir() {
               </label>
               <p className="text-gray-500 mb-2">Evidence Collection</p>
             </div>
-
-            {/* Add more fields similarly */}
+            <div className="mb-4 border-b pb-4">
+              <label className="block text-sm font-semibold text-gray-800">
+                Witness Statements:
+              </label>
+              <p className="text-gray-500 mb-2">Witness Statements</p>
+            </div>
+            <div className="mb-4 border-b pb-4">
+              <label className="block text-sm font-semibold text-gray-800">
+                Resolution
+              </label>
+              <p className="text-gray-500 mb-2">Resolution</p>
+            </div>
+            <div className="mb-4 border-b pb-4">
+              <label className="block text-sm font-semibold text-gray-800">
+                Outcomes:
+              </label>
+              <p className="text-gray-500 mb-2">Outcomes</p>
+            </div>
           </div>
         </main>
       </body>

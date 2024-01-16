@@ -22,10 +22,16 @@ import Citizenport from "./Componants/Citizenport";
 import Complaint from "./Componants/Complaint";
 import Pendingreq from "./Componants/Pendingreq";
 import Login from "./Componants/Login";
+import ForgotPassword from "./Componants/ForgotPassword";
+import Chatgrow from "./Componants/Chatgrow";
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path:"/chatgrow",
+    element:<Chatgrow/>
   },
   {
     path: "/homeauth",
@@ -36,15 +42,15 @@ const router = createBrowserRouter([
     element: <Authrityemailverify />,
   },
   {
-    path: "/otp",
-    element: <Otphighauth />,
+    path: "/authotp",
+    element: <Otphighauth />
   },
   {
-    path: "/reset",
+    path: "/authreset",
     element: <ResetPasswordAuth />,
   },
   {
-    path: "/rating",
+    path: "/policefrating",
     element: <Polishstationrating />,
   },
   {
@@ -59,40 +65,36 @@ const router = createBrowserRouter([
   // Citizen Port
 
   {
-    path: '/citizenport',
+    path: "/citizenport",
     element: <Citizenport />,
-    children: [
-      {
-        path: 'appointment',
-        element: <Appointment />,
-      },
-      // Add more child routes if needed
-    ],
   },
-
 
   {
     path: "/approveapoint",
     element: <Approveapoint />,
   },
   {
-    path:"/approvedreq",
-    element:<Approvedreq/>
-  },
- 
-  {
-    path:"/complaint",
-    element:<Complaint/>
-  },
-  {
-    path:"/pendingreq",
-    element:<Pendingreq/>
-  },
-  {
-    path:"/login",
-    element:<Login/>
+    path: "/approvedreq",
+    element: <Approvedreq />,
   },
 
+  {
+    path: "/complaint",
+    element: <Complaint />,
+  },
+  {
+    path: "/pendingreq",
+    element: <Pendingreq />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path:"/chatgrow",
+    element:<Chatgrow/>
+  },
+ 
 ]);
 function App() {
   return <RouterProvider router={router} />;

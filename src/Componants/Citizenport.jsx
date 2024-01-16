@@ -3,6 +3,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import "../App.css";
 import logo from "../Img/Rajasthan_Police_Logo (2) (1).png";
 import Navbar from "./Navbar";
+
 export default function Citizenport() {
   const navigate = useNavigate();
   return (
@@ -49,7 +50,11 @@ export default function Citizenport() {
             Track FIR
           </button>
 
-          <button className="w-64 h-40 p-4 bg-white text-orange-400 font-semibold text-xl  rounded-lg hover:transform hover:-translate-y-5 transition-transform">
+          <button
+          onClick={()=>{
+            navigate('/chatgrow')
+          }}
+           className="w-64 h-40 p-4 bg-white text-orange-400 font-semibold text-xl  rounded-lg hover:transform hover:-translate-y-5 transition-transform">
             FAQ and Help Center
           </button>
         </div>

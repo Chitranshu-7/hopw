@@ -1,63 +1,173 @@
-import React from 'react'
+// import React, { useEffect, useState } from 'react';
+// import axios from 'axios';
 
-import { useState } from 'react';
-import  axios  from 'axios';
-import Navbar from './Navbar';
+// export default function Trackfir() {
+//   const [firDetails, setFirDetails] = useState([]);
+//   const [searchFIRNO, setSearchFIRNO] = useState('');
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const response = await axios.get("http://localhost:4000/api/v1/trackfir");
+//         setFirDetails(response.data.FIR);
+//       } catch (error) {
+//         console.error("Error fetching data:", error);
+//       }
+//     };
+
+//     fetchData();
+//   }, []);
+
+//   const handleCheckStatus = async () => {
+//     try {
+//       const response = await axios.get(`http://localhost:4000/api/v1/trackfir/${searchFIRNO}`);
+//       setFirDetails([response.data]); // Assuming the API returns a single FIR object
+//     } catch (error) {
+//       console.error("Error fetching FIR details:", error);
+//       // Handle error (e.g., show an error message to the user)
+//     }
+//   };
+
+//   const filteredFIRDetails = firDetails.filter(
+//     (firDetail) => firDetail.FIRNO === searchFIRNO
+//   );
+
+//   return (
+//     <div className="relative">
+//       <main className="mt-10 py-3">
+//         <h1 className="text-4xl text-center font-semibold">FIR Details</h1>
+//       </main>
+
+//       <main className="my-16 flex flex-wrap items-center justify-center py-10">
+//         <div>
+//           <input
+//             className="py-4 text-2xl font-semibold px-2 text-gray-900 outline-none w-full m-2 chinu"
+//             type="text"
+//             placeholder="Enter FIR NO. Here"
+//             value={searchFIRNO}
+//             onChange={(e) => setSearchFIRNO(e.target.value)}
+//           />
+//         </div>
+
+//         <div>
+//           {/* <button
+//             onClick={handleCheckStatus}
+//             className="py-4 text-2xl bg-blue-600 font-semibold px-2 text-white w-full m-2 chinu"
+//           >
+//             Check The Status
+//           </button> */}
+//         </div>
+//       </main>
+
+//       <main className="mx-10 mt-10 flex flex-wrap justify-center">
+//         {filteredFIRDetails.map((firDetail, index) => (
+//           <div
+//             key={index}
+//             className="p-6 bg-white text-gray-700 border rounded flex flex-wrap flex-col w-96 lg:w-2/4"
+//           >
+//             <div className="mb-4 border-b pb-4">
+//               <label className="block text-sm font-semibold text-gray-800">FIR Number:</label>
+//               <p className="text-gray-500 font-semibold mb-2">{firDetail.FIRNO}</p>
+//             </div>
+//             <div className="mb-4 border-b pb-4">
+//               <label className="block text-sm font-semibold text-gray-800">Complainant Name:</label>
+//               <p className="text-gray-500 mb-2">{firDetail.complainantName}</p>
+//             </div>
+//             {/* Add similar blocks for other FIR details */}
+//           </div>
+//         ))}
+//       </main>
+//     </div>
+//   );
+// }
+
+
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
 export default function Trackfir() {
+  const [firDetails, setFirDetails] = useState([]);
+  const [searchFIRNO, setSearchFIRNO] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const [FIRNO, setFIRNO] = useState('');
-  const [status, setStatus] = useState('');
-  const [error, setError] = useState('');
-  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:4000/api/v1/trackfir");
+        setFirDetails(response.data.FIR);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   const handleCheckStatus = async () => {
     try {
-      // Make an API call to check the FIR status
-      const response = await axios.post('http://localhost:4000/api/v1/updateonfir', {
-       FIRNO
-      });
-
-      // Check the response from the server
-      if (response.data.success) {
-        setStatus(response.data.status);
-        setError('');
-      } else {
-        setError(response.data.message);
-        setStatus('');
-      }
+      setLoading(true);
+      const response = await axios.get(`http://localhost:4000/api/v1/trackfir/${searchFIRNO}`);
+      setFirDetails([response.data]); // Assuming the API returns a single FIR object
     } catch (error) {
-      console.error('Error checking FIR status:', error);
-      setError('An error occurred while checking FIR status.');
-      setStatus('');
+      console.error("Error fetching FIR details:", error);
+      // Handle error (e.g., show an error message to the user)
+    } finally {
+      setLoading(false);
     }
   };
+
+  const filteredFIRDetails = firDetails.filter(
+    (firDetail) => firDetail.FIRNO === searchFIRNO
+  );
+
   return (
     <div className="relative">
-    <Navbar/>
+      <main className="mt-10 py-3">
+        <h1 className="text-4xl text-center font-semibold">FIR Details</h1>
+      </main>
 
-    <main className="my-16  flex flex-wrap  items-center  justify-center py-10 ">
-        <div >
+      <main className="my-16 flex flex-wrap items-center justify-center py-10">
+        <div>
           <input
-            className="py-4 text-2xl font-semibold px-2 text-gray-900 outline-none w-full m-2 chinu  "
+            className="py-4 text-2xl font-semibold px-2 text-gray-900 outline-none w-full m-2 chinu"
             type="text"
-            name=""
-            id=""
             placeholder="Enter FIR NO."
+            value={searchFIRNO}
+            onChange={(e) => setSearchFIRNO(e.target.value)}
           />
         </div>
 
-        <div className=" ">
+        <div>
           <button
-          onClick={handleCheckStatus}
-           className="py-4 text-2xl bg-blue-600 font-semibold px-2 text-white w-full m-2  chinu ">
+            onClick={handleCheckStatus}
+            className="py-4 text-2xl bg-blue-600 font-semibold px-2 text-white w-full m-2 chinu"
+          >
             Check The Status
           </button>
         </div>
       </main>
 
-      {status && <p className="text-green-500 font-semibold mt-2">{status}</p>}
-      {error && <p className="text-red-500 font-semibold mt-2 text-center">{error}</p>}
-
-  
-  </div>
-  )
+      <main className="mx-10 mt-10 flex flex-wrap justify-center">
+        {loading && <p>Loading...</p>}
+        {!loading &&
+          filteredFIRDetails.map((firDetail, index) => (
+            <div
+              key={index}
+              className="p-6 bg-white text-gray-700 border rounded flex flex-wrap flex-col w-96 lg:w-2/4"
+            >
+              <div className="mb-4 border-b pb-4">
+                <label className="block text-sm font-semibold text-gray-800">FIR Number:</label>
+                <p className="text-gray-500 font-semibold mb-2">{firDetail.FIRNO}</p>
+              </div>
+              <div className="mb-4 border-b pb-4">
+                <label className="block text-sm font-semibold text-gray-800">Complainant Name:</label>
+                <p className="text-gray-500 mb-2">{firDetail.complainantName}</p>
+              </div>
+              {/* Add similar blocks for other FIR details */}
+            </div>
+          ))}
+      </main>
+    </div>
+  );
 }
+
