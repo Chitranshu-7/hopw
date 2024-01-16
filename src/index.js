@@ -3,11 +3,26 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Feedbackfir from './Componants/Feedbackfir';
+import Feedback from './Componants/Feedback';
+import FeebackCard from './PoliceStation/FeebackCard';
+import Feedbackfri from './PoliceStation/Feedbackfri';
+import AddFir from './HighAuthority/AddFir';
+import Updatefri from './PoliceStation/Updatefri';
+import Seefir from './Componants/Seefir';
+// import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+   <App/>
+   {/* <Feedbackfir/> */}
+   {/* <Feedback/> */}
+   {/* <FeebackCard/> */}
+   {/* <Feedbackfri/> */}
+   {/* <AddFir/> */}
+   {/* <Seefir/> */}
+   {/* <Updatefri/> */}
   </React.StrictMode>
 );
 
