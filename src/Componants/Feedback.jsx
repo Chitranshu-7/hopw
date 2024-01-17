@@ -104,7 +104,7 @@ export default function Feedback() {
 
   return (
     <body className="relative">
-      {/* <Navbar/> */}
+      <Navbar/>
       <main className="mt-10 py-3">
         <h1 className="text-4xl text-center font-semibold">Feedback</h1>
       </main>

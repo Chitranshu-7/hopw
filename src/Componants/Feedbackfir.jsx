@@ -100,7 +100,7 @@ export default function Feedbackfir() {
 
   return (
     <div className="relative">
-      {/* <Navbar/> */}
+      <Navbar/>
 
       <main className="mt-10 py-3">
         <h1 className="text-4xl text-center font-semibold">Feedback For FIR</h1>
