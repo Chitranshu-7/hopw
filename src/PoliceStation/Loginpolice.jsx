@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios';
 
 import { useState } from 'react';
+import Navbar from '../Componants/Navbar';
 
 
 export default function Loginpolice() {
@@ -68,27 +69,8 @@ export default function Loginpolice() {
   return (
     <>
 
-<body className="relative">
-      <nav className="bg-white text-center py-5 flex flex-wrap justify-around sticky top-0">
-        <div>
-          <img src={logo} alt="" className="Headimg" />
-        </div>
-        <div>
-          <h1 className="text-orange-400 text-5xl text">Rajasthan police</h1>
-          <p className="text-xl font-semibold text-orange-400 mt-3">
-            Government of India
-          </p>
-        </div>
-        <div>
-          <button 
-          onClick={()=>{
-            window.location.href = '/';
-          }      }
-          className=" bg-orange-400 py-1 px-6 rounded hover:bg-orange-600">
-            Home
-          </button>
-        </div>
-      </nav>
+<div className="relative">
+    <Navbar/>
 
       <main className="mt-10 py-3">
         <h1 className="text-4xl text-center font-semibold">Login</h1>
@@ -132,7 +114,7 @@ export default function Loginpolice() {
         </div>
       </main>
    
-    </body>
+    </div>
     </>
   )
 }
