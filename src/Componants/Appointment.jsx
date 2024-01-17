@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
 import { Outlet } from "react-router-dom";
+import Linker from "../Linker";
 export default function Appointment() {
   const [Name, setName] = useState("");
   const [City, setCity] = useState("");
@@ -17,7 +18,7 @@ export default function Appointment() {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post("http://localhost:4000/api/v1/meetingticket", {
+      const response = await axios.post(`${Linker.backend}/api/v1/meetingticket`, {
         Name,
         City,
         PhoneNo,

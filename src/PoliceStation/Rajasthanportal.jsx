@@ -22,17 +22,30 @@ export default function Rajasthanportal() {
      className="w-64 h-40 p-4 bg-white text-orange-400 font-semibold text-xl  rounded-lg hover:transform hover:-translate-y-5 transition-transform">
       Citizen Feedbacks
     </button>
-    <button className="w-64 h-40 p-4 bg-white text-orange-400 font-semibold text-xl  rounded-lg hover:transform hover:-translate-y-5 transition-transform">
+    <button
+    onClick={()=>{
+      navigate('/dashboardreq')
+    }}
+     className="w-64 h-40 p-4 bg-white text-orange-400 font-semibold text-xl  rounded-lg hover:transform hover:-translate-y-5 transition-transform">
       Appointment Requests
     </button>
   
   </div>
 
   <div className="flex flex-wrap justify-center gap-8 mt-12">
-    <button className="w-64 h-40 p-4 bg-white text-orange-400 font-semibold text-xl  rounded-lg  hover:transform hover:-translate-y-5 transition-transform">
+    <button
+    onClick={()=>{
+      navigate('/complainreview')
+    }}
+     className="w-64 h-40 p-4 bg-white text-orange-400 font-semibold text-xl  rounded-lg  hover:transform hover:-translate-y-5 transition-transform">
       Social Issues
     </button> 
-    <button  className="w-64 h-40 p-4 bg-white  text-orange-400 font-semibold text-xl rounded-lg hover:transform hover:-translate-y-5 transition-transform">
+    <button 
+    onClick={()=>{
+      navigate('/firdash')
+    }}
+    
+    className="w-64 h-40 p-4 bg-white  text-orange-400 font-semibold text-xl rounded-lg hover:transform hover:-translate-y-5 transition-transform">
      
      Update an FIR
     </button>

@@ -61,7 +61,8 @@ export default function Approveticket() {
       });
   
       // Handle the response from the backend as needed
-      console.log("Backend response:", response);
+      // console.log("Backend response:", response);
+      navigate('/pendingticket')
   
       // Optionally, you can navigate to another page after successful submission
       // navigate('/success'); // Replace '/success' with the desired route

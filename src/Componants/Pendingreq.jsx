@@ -105,17 +105,7 @@ export default function Pendingreq() {
                 </div>
               </div>
 
-              <div>
-                <label
-                  htmlFor={`UserId-${index}`}
-                  className="text-sm font-semibold text-gray-700 flex mb-2"
-                >
-                  User Id:
-                </label>
-                <div className="mb-4 p-2 border border-gray-300 rounded outline-none w-full">
-                  {user._id}
-                </div>
-              </div>
+      
 
               <div>
                 <label

@@ -1,11 +1,15 @@
 import ChatBot from "react-simple-chatbot";
 import React from "react";
+import Navbar from "./Navbar";
 
 function Chatgrow() {
   return (
+    <>
+   
+    <Navbar/>
     <div className="text-gray-500 flex justify-center mt-20">
    <ChatBot
-  headerTitle="Speech Synthesis"
+  headerTitle="Rajasthan Police Chat"
   speechSynthesis={{ enable: true, lang: 'en' }}
   steps={[
 
@@ -72,6 +76,7 @@ function Chatgrow() {
   ]}
 />
     </div>
+    </>
   );
 }
 

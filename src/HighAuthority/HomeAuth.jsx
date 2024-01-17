@@ -61,10 +61,18 @@ export default function HomeAuth() {
 
       <main  className="mx-10 mt-20">
         <div className="flex flex-wrap justify-center gap-8">
-          <button className="w-64 h-40 p-4 bg-white text-orange-400 font-semibold text-xl  rounded-lg hover:transform hover:-translate-y-5 transition-transform">
+          <button
+          onClick={()=>{
+               navigate("/policerating")
+          }
+        }
+           className="w-64 h-40 p-4 bg-white text-orange-400 font-semibold text-xl  rounded-lg hover:transform hover:-translate-y-5 transition-transform">
             Police Station Insight
           </button>
           <button
+          onClick={()=>{
+            navigate("/pendingticket")
+          }}
            className="w-64 h-40 p-4 bg-white text-orange-400 font-semibold text-xl  rounded-lg hover:transform hover:-translate-y-5 transition-transform">
             Citizen Voice Platform
           </button>

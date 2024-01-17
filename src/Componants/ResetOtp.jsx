@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 // import { useNavigate, useNavigation } from "react-router-dom";
 import logo from "../Img/Rajasthan_Police_Logo (2) (1).png";
-import "./App.css";
+
 import axios from 'axios';
 export default function ResetOtp() {
 //   const navigate= useNavigate();

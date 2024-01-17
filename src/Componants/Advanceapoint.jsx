@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import logo from "../Img/Rajasthan_Police_Logo (2) (1).png";
 import axios from 'axios';
 import Navbar from './Navbar';
+import Linker from '../Linker';
 export default function Advanceapoint() {
   const [Name, setName] = useState('');
   const [PhoneNo, setPhone] = useState('');
@@ -32,7 +33,7 @@ export default function Advanceapoint() {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:4000/api/v1/apointment', {
+      const response = await axios.post(`${Linker.backend}/api/v1/apointment`, {
          Name,
         PhoneNo,
         Email,
@@ -42,9 +43,18 @@ export default function Advanceapoint() {
        Response
       });
 
-      console.log('API Response:', response.data);
-      console.log(response.data.message)
+      // console.log('API Response:', response.data);
+      // console.log(response.data.message)
       setSuccessMessage(response.data.message)
+
+      setName("");
+      setEmail("")
+      setPhone("")
+      setPincode("")
+      setAddress("");
+      setPurpose("");
+    
+      
 
       // You can handle the response here, redirect to another page, show a success message, etc.
 

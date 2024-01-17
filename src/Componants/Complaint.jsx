@@ -122,8 +122,13 @@ export default function Complaint() {
         setSuccessMessage(response.data.message);
 
         
-
-        // ... (reset state)
+      setAddress("");
+      setEmail("")
+      setName("")
+      setPhoneNo("")
+      setPinCode("")
+      setPoliceStationName('')
+      
       } catch (error) {
         console.error('Error submitting complaint:', error);
         setError('An error occurred while submitting the complaint. Please try again later.');

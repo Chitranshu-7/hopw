@@ -102,14 +102,7 @@ export default function Polishstationrating() {
         ))}
       </div>
     </div>
-            <div className="mb-4 border-b pb-4">
-              <label className="block text-sm font-semibold text-gray-800">
-                 PhoneNo:
-              </label>
-              <p className="text-green-500 font-semibold mb-2">
-                {feedback.rating}
-              </p>
-            </div>
+          
 
            
           </div>

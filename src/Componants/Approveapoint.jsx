@@ -62,6 +62,7 @@ export default function Approveapoint() {
   
       // Handle the response from the backend as needed
       console.log("Backend response:", response.data);
+      navigate('/pendingreq')
   
       // Optionally, you can navigate to another page after successful submission
       // navigate('/success'); // Replace '/success' with the desired route
@@ -148,6 +149,7 @@ export default function Approveapoint() {
 
           <div className="flex justify-evenly flex-wrap">
             <button
+            
               onClick={handleSendDetails}
               className="bg-gray-300 text-gray-800 px-3 py-2 rounded hover:bg-gray-400"
             >

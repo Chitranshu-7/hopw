@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from "../Img/Rajasthan_Police_Logo (2) (1).png";
-import "./App.css";
+
 import axios from "axios";
 
 export default function Registration() {

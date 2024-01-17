@@ -34,61 +34,32 @@ export default function Updatefri() {
       
      }
 
-     useEffect(() => {
-      // Fetch data from API
-      const fetchData = async () => {
-        try {
-          // Replace 'API_ENDPOINT_HERE' with the actual API endpoint for fetching FIR data
-          const response = await axios.get('API_ENDPOINT_HERE');
-          const data = response.data;
-  
-          // Set the state variables with fetched data
-          setFriNo(data.friNo);
-          setComplainantName(data.complainantName);
-          setComplainantNumber()
-          setInvestigatingOfficers()
-          setInvestigatingProgress()
-          setStatus()
-          setStepsUndertaken()
-          setEvidenceCollections()
-          setWitnessStatements()
-          setResolution()
-          setOutcomes()
 
-        } catch (error) {
-          console.error("Error fetching data:", error);
-        }
-      };
-  
-      fetchData(); 
-    }, []);
 
-    
   const handleUpdate = async () => {
     try {
-      // Replace 'UPDATE_API_ENDPOINT_HERE' with the actual API endpoint for updating FIR data
-      const response = await axios.put('UPDATE_API_ENDPOINT_HERE', {
-        friNo,
-        complainantName,
-        complainantNumber,
-        investigatingProgress,
-        investigatingOfficers,
-        status,
-        stepsUndertaken,
-        evidenceCollections,
-        witnessStatements,
-        resolution,
-        outcomes,
+      
+      const response = await axios.post('http://localhost:4000/api/v1/updateonfir', {
+        FIRNO:friNo,
+        complainantName:complainantName,
+        complainantNumber:complainantNumber,
+        InvestigationProgress:investigatingProgress,
+        InvestigatingOfficers:investigatingOfficers,
+        Status:status,
+        StepsUndertaken:stepsUndertaken,
+        EvidenceCollections:evidenceCollections,
+        WitnessStatements:witnessStatements,
+        Resolutions:resolution,
+        Outcomes:outcomes
        
       });
 
       const result = response.data;
 
-      if (result.success) {
-        setSuccessMessage("FIR updated successfully!");
-      } else {
-        setError(result.message);
-      }
+      console.log(response)
+      setSuccessMessage(response.data.message)
+      console.log(response.data)
+     
     } catch (error) {
       setError("Error updating FIR");
       console.error("Error updating FIR:", error);
@@ -96,7 +67,7 @@ export default function Updatefri() {
   };
 
   return (
-    <body>
+    <div>
     <nav className="bg-white text-center py-5 flex flex-wrap justify-around sticky top-0 ">
       <div>
         <img src={logo} alt="" className="Headimg  " />
@@ -287,7 +258,7 @@ export default function Updatefri() {
   className="mb-4 p-2 border border-gray-300 rounded outline-none h-20"
 />
           <button
-            onClick={handleVerify}
+            onClick={handleUpdate}
             className="bg-orange-400 text-white py-2 px-4 rounded hover:bg-orange-600"
           >
             Update  FIR
@@ -300,7 +271,7 @@ export default function Updatefri() {
           )}
         </div>
     </div>
-  </body>
+  </div>
 
   )
 }
