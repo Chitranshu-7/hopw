@@ -34,7 +34,7 @@ export default function Citizenport() {
           </button>
           <button
           onClick={()=>{
-            navigate("/providefeedback")
+            navigate("/dashboardfeedback")
           }}
            className="w-64 h-40 p-4 bg-white  text-orange-400 font-semibold text-xl rounded-lg hover:transform hover:-translate-y-5 transition-transform">
             Provide Feedback

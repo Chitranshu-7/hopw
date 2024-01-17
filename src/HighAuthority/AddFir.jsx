@@ -85,7 +85,7 @@ export default function AddFir() {
 
       <main className="mt-10 py-3">
         <h1 className="text-4xl text-center font-semibold">
-          Higher Authority Portal
+         Add New FIR
         </h1>
       </main>
 

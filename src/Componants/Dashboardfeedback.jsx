@@ -16,7 +16,7 @@ export default function Dashboardfeedback() {
         <div className="flex flex-wrap justify-center gap-8">
           <button
             onClick={() => {
-              navigate("/feedbackfri");
+              navigate("/feedback");
             }}
             className="w-64 h-40 p-4 bg-white text-orange-400 font-semibold text-xl  rounded-lg hover:transform hover:-translate-y-5 transition-transform"
           >
@@ -24,7 +24,7 @@ export default function Dashboardfeedback() {
           </button>
           <button
             onClick={() => {
-              navigate("/feedbackcard");
+              navigate("/feedbackfir");
             }}
             className="w-64 h-40 p-4 bg-white text-orange-400 font-semibold text-xl  rounded-lg hover:transform hover:-translate-y-5 transition-transform"
           >
