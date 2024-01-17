@@ -49,8 +49,8 @@ export default function Loginpolice() {
     
   
       console.log(response.data.result.message)
-      let a= response.data.result.message;
-      setSuccessMessage(a)
+
+      setSuccessMessage(response.data.result.message)
       
     
 

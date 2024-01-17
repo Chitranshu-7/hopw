@@ -25,7 +25,7 @@ export default function Dashboardreq() {
           </button>
           <button
           onClick={()=>{
-            navigate("/")
+            navigate("/approvedreq")
           }}
            className="w-64 h-40 p-4 bg-white text-orange-400 font-semibold text-xl  rounded-lg hover:transform hover:-translate-y-5 transition-transform">
             Approved Requests

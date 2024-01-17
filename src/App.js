@@ -46,6 +46,7 @@ import Meetingdashboard from "./HighAuthority/Meetingdashboard";
 import AddFir from "./HighAuthority/AddFir";
 import Firdash from "./PoliceStation/Firdash";
 import Complainreview from "./PoliceStation/Complainreview";
+import Dashboardfeedback from "./Componants/Dashboardfeedback";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -227,6 +228,10 @@ const router = createBrowserRouter([
   },{
     path:"/complainreview",
     element:<Complainreview/>
+  },
+  {
+    path:
+    element:<Dashboardfeedback/>
   }
 
 ]);

@@ -93,7 +93,7 @@ export default function Updatefri() {
 
     <main className="mt-10 py-3">
       <h1 className="text-4xl text-center font-semibold">
-        Higher Authority Portal
+        Update On Fir
       </h1>
     </main>
 
